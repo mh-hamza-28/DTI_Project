@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Drug-Target Interaction Prediction</title>
+    <meta name="description" content="Discover our robust Machine Learning model that predicts Drug-Target Interactions using structural and compositional features.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-dna gradient-text"></i> DTI Predict
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#tech-stack">Tech Stack</a></li>
+                <li><a href="https://github.com/your-username/DTI_Project" target="_blank" class="github-btn"><i class="fa-brands fa-github"></i> Repository</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <div class="badge">Machine Learning built for Biotech</div>
+            <h1 class="hero-title">Predict <span class="gradient-text">Drug-Target</span> Interactions in Seconds</h1>
+            <p class="hero-subtitle">Accelerating pharmaceutical discovery by computationally bridging the gap between chemical compounds and protein sequences.</p>
+            <div class="cta-group">
+                <a href="#about" class="btn btn-primary">Learn More</a>
+                <a href="#methodology" class="btn btn-secondary">How it Works <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <div class="hero-graphic" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+            <div class="glass-card mockup-card">
+                <div class="mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="mockup-body">
+                    <div class="code-line"><span class="keyword">from</span> rdkit <span class="keyword">import</span> Chem</div>
+                    <div class="code-line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</div>
+                    <div class="code-line mt-2"><span class="comment"># Initialize model</span></div>
+                    <div class="code-line">model = RandomForestClassifier()</div>
+                    <div class="code-line">prediction = model.predict(drug_features, protein_features)</div>
+                    <div class="code-line mt-2 command-output">> Interaction Confidence: 98.6%</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Abstract Background Elements -->
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+    </section>
+
+    <!-- Problem & Solution Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>The Problem We're Solving</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-up" data-aos-delay="100">
+                    <p>Drug-Target Interaction (DTI) prediction is a crucial step in early-stage drug discovery and development. Knowing precisely whether a chemical compound (drug) binds to a specific target protein can significantly accelerate the discovery of novel therapeutics and repurpose existing drugs for new diseases.</p>
+                    <p>Traditionally, wet-lab experiments have been the sole method for verifying these interactions. However, they are immensely costly, highly prone to failure, and time-consuming. <strong>Our computational approach leverages Machine Learning to drastically reduce this surface area, acting as a highly accurate filtration step.</strong></p>
+                </div>
+                
+                <div class="about-stats" data-aos="fade-left" data-aos-delay="200">
+                    <div class="stat-card glass-panel">
+                        <i class="fa-solid fa-flask text-accent"></i>
+                        <h3>Traditional Labs</h3>
+                        <p>Months of testing, Millions in budget, High failure rate.</p>
+                    </div>
+                    <div class="stat-card glass-panel highlight-card">
+                        <i class="fa-solid fa-bolt text-accent"></i>
+                        <h3>Computational ML</h3>
+                        <p>Instant inference, minimal cost, robust data-driven precision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="methodology-section">
+        <div class="bg-shape shape-3"></div>
+        <div class="section-container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Our Methodology</h2>
+                <p>A rigorous end-to-end pipeline handling molecular geometry to statistical learning.</p>
+                <div class="header-line center"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-icon">1</div>
+                    <div class="timeline-content glass-panel">
+                        <h3>Molecular Simplification</h3>
+                        <p>We start with SMILES strings (Simplified Molecular Input Line Entry System) representing our drug compounds.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-icon">2</div>
+                    <div class="timeline-content glass-panel">
+                        <h3>Data Preprocessing & Feature Extraction</h3>
+                        <p>Using <code>RDKit</code>, we extract structural features of the drug compound such as Molecular Weight, Hydrogen Donors, and Acceptors. For the protein, we extract compositional sequence features (counts of Alanine, Leucine, etc., and total length).</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-icon">3</div>
+                    <div class="timeline-content glass-panel">
+                        <h3>Statistical Modeling</h3>
+                        <p>Concatenated feature vectors containing both drug and protein attributes are passed into a <strong>Logistic Regression</strong> and a highly robust <strong>Random Forest Classifier</strong>, trained on an 80/20 train/test split dataset.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-icon">4</div>
+                    <div class="timeline-content glass-panel">
+                        <h3>Full-Stack Deployment</h3>
+                        <p>Finally, everything is seamlessly tied into a Flask Web Application with a premium Vanilla JS UI, allowing researchers to interface with the predictive models effortlessly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech-stack" class="stack-section">
+        <div class="section-container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Technology Stack</h2>
+                <div class="header-line center"></div>
+            </div>
+            
+            <div class="stack-grid" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stack-item tooltip">
+                    <i class="fa-brands fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="stack-item tooltip">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-Learn">
+                    <span>Scikit-Learn</span>
+                </div>
+                <div class="stack-item tooltip">
+                    <i class="fa-solid fa-flask"></i>
+                    <span>Flask backend</span>
+                </div>
+                <div class="stack-item tooltip">
+                    <i class="fa-brands fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="stack-item tooltip">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="stack-item tooltip">
+                    <i class="fa-brands fa-js"></i>
+                    <span>Vanilla JS</span>
+                </div>
+                <div class="stack-item tooltip text-bold">
+                    <span>RDKit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Section -->
+    <section class="future-section">
+        <div class="section-container text-center glass-panel highlight-border" data-aos="flip-up">
+            <h2>The Future of This Project</h2>
+            <p>We are constantly evolving. Upcoming milestones include integrating <strong>Deep Learning</strong> (LSTMs & Transformers) for better sequence analysis, utilizing <strong>Graph Neural Networks (GNNs)</strong> for molecular graph representation, and scaling to massive datasets like BindingDB.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <i class="fa-solid fa-dna gradient-text"></i> DTI Predict
+            </div>
+            <p>Developed with <i class="fa-solid fa-heart text-accent"></i> for the Open Source Community</p>
+            <div class="social-links">
+                <a href="https://github.com/your-username/DTI_Project" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 DTI Prediction Project. Built via Antigravity.
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts & AOS Init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init Animate On Scroll
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
