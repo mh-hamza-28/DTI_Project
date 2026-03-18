@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTI Prediction Web App</title>
+    <!-- Use Outfit font for a premium modern aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Drug-Target Interaction Prediction</h1>
+            <p>Predict whether a drug interacts with a specific protein molecular sequence seamlessly using ML.</p>
+        </header>
+        <main>
+            <form id="prediction-form" class="glass-panel">
+                <div class="input-group">
+                    <label for="smiles">Drug SMILES String</label>
+                    <input type="text" id="smiles" placeholder="e.g. CC(=O)Oc1ccccc1C(=O)O" required>
+                </div>
+                <div class="input-group">
+                    <label for="sequence">Protein Sequence</label>
+                    <textarea id="sequence" rows="3" placeholder="e.g. ALGLGLAAAGGGLLLA" required></textarea>
+                </div>
+                <button type="submit" id="submit-btn">Predict Interaction</button>
+            </form>
+            
+            <div id="result-container" class="glass-panel hidden">
+                <h2>Result: <span id="prediction-label"></span></h2>
+                <div class="stats">
+                    <div class="stat-box">
+                        <span class="stat-label">Prediction Confidence</span>
+                        <span class="stat-value" id="confidence-score"></span>
+                    </div>
+                </div>
+                <div class="model-details">
+                    <p>Logistic Regression output: <strong id="lr-score"></strong></p>
+                    <p>Random Forest output: <strong id="rf-score"></strong></p>
+                </div>
+            </div>
+            <div id="error-container" class="hidden error-text"></div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
