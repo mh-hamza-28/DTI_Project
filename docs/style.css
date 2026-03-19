@@ -254,6 +254,41 @@ a { text-decoration: none; color: inherit; }
     gap: 1rem;
 }
 
+.start_button {
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 30px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  background: var(--gradient-primary);
+    color: white;
+  letter-spacing: 0.010em;
+  border-radius: 16px;
+  margin-top: 90px;
+  margin-left: 90px;
+}
+
+button svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+button:hover span {
+  transform: translateX(7px);
+}
+
+
 /* Glass Mockup */
 .hero-graphic {
     flex: 1;
