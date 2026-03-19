@@ -14,11 +14,12 @@ document.getElementById('prediction-form').addEventListener('submit', async (e) 
     btn.textContent = 'Analyzing Features & Predicting...';
 
     try {
-        const response = await fetch('/api/predict', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ smiles, sequence })
-        });
+        const response = await fetch('https://your-live-backend.onrender.com/api/predict',
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ smiles, sequence })
+            });
 
         const data = await response.json();
 

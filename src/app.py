@@ -5,11 +5,14 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 from features import drug_features, protein_features
 import pandas as pd
 from model import prepare_data, train_and_eval
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
+# Enable cross-origin requests so your GitHub pages frontend can talk to this backend
+CORS(app)
 
 lr_model = None
 rf_model = None
